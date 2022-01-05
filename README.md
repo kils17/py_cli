@@ -1,28 +1,31 @@
 ##############################################################################
-## py_cli : NSO Action Package of live-status for NETCONF NED device (CLI NED device as well)
-##          - python code using paramiko
-##          - reading the host/account/ssh information from CDB
+ py_cli : NSO Action Package of live-status for NETCONF NED device (CLI NED device as well)
+          - python code using paramiko
+          - reading the host/account/ssh information from CDB
 ##############################################################################
 
 
 admin@ncs# show devices list
+########################################################################
 NAME   ADDRESS          DESCRIPTION  NED ID                ADMIN STATE
-----------------------------------------------------------------------
+########################################################################
 cat3k  10.62.149.24     -            cisco-ios-cli-6.74    unlocked
 cat9k  10.70.137.4      -            cisco-ios-cli-6.74    unlocked
 junos  192.168.124.117  -            juniper-junos-nc-4.6  unlocked
+########################################################################
 
 
 
 admin@ncs# show packages package oper-status
-                                                                                                        PACKAGE
+##############################################################################################################################
                           PROGRAM                                                                       META     FILE
                           CODE     JAVA           PYTHON         BAD NCS  PACKAGE  PACKAGE  CIRCULAR    DATA     LOAD   ERROR
 NAME                  UP  ERROR    UNINITIALIZED  UNINITIALIZED  VERSION  NAME     VERSION  DEPENDENCY  ERROR    ERROR  INFO
--------------------------------------------------------------------------------------------------------------------------------
+##############################################################################################################################
 cisco-ios-cli-6.74    X   -        -              -              -        -        -        -           -        -      -
 juniper-junos-nc-4.6  X   -        -              -              -        -        -        -           -        -      -
 py_cli                X   -        -              -              -        -        -        -           -        -      -
+##############################################################################################################################
 
 
 
