@@ -1,0 +1,44 @@
+module py_cli {
+
+  namespace "http://example.com/py_cli";
+  prefix py_cli;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-common {
+    prefix tailf;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  description
+    "Bla bla...";
+
+  revision 2016-01-01 {
+    description
+      "Initial revision.";
+  }
+
+  container action {
+    tailf:action exec {
+      tailf:actionpoint py_cli-action;
+      input {
+        leaf device {
+          type leafref {
+            path "/ncs:devices/ncs:device/ncs:name";
+          }
+        }
+        leaf command {
+          type string;
+        }
+      }
+      output {
+        leaf result {
+          type string;
+        }
+      }
+    }
+  }
+}

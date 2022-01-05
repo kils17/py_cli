@@ -1,5 +1,5 @@
 ##############################################################################
-## py_cli : NSO Action Package of live-status for NETCONF NED device
+## py_cli : NSO Action Package of live-status for NETCONF NED device (CLI NED device as well)
 ##          - python code using paramiko
 ##          - reading the host/account/ssh information from CDB
 ##############################################################################
