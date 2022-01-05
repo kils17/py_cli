@@ -36,6 +36,8 @@ py_cli                X   -        -              -              -        -     
 
 # Example of calling the py_cli action onto the Netconf NED device
 
+- target device : Olive Junos virtual swtich on the GNS3 VM
+
 ```
 admin@ncs# py_cli:action exec device junos command "show configuration"
 result ## Last commit: 2022-01-05 09:11:35 UTC by admin
@@ -84,6 +86,55 @@ interfaces {
         }
     }
 }
+
+admin@ncs# py_cli:action exec device junos command "show ver"
+result Model: olive
+JUNOS Base OS boot [12.1R1.9]
+JUNOS Base OS Software Suite [12.1R1.9]
+JUNOS Kernel Software Suite [12.1R1.9]
+JUNOS Crypto Software Suite [12.1R1.9]
+JUNOS Packet Forwarding Engine Support (M/T Common) [12.1R1.9]
+JUNOS Packet Forwarding Engine Support (M20/M40) [12.1R1.9]
+JUNOS Online Documentation [12.1R1.9]
+JUNOS Voice Services Container package [12.1R1.9]
+JUNOS Border Gateway Function package [12.1R1.9]
+JUNOS Services AACL Container package [12.1R1.9]
+JUNOS Services LL-PDF Container package [12.1R1.9]
+JUNOS Services PTSP Container package [12.1R1.9]
+JUNOS Services Stateful Firewall [12.1R1.9]
+JUNOS Services NAT [12.1R1.9]
+JUNOS Services Application Level Gateways [12.1R1.9]
+JUNOS Services Captive Portal and Content Delivery Container package [12.1R1.9]
+JUNOS Services RPM [12.1R1.9]
+JUNOS Services HTTP Content Management package [12.1R1.9]
+JUNOS AppId Services [12.1R1.9]
+JUNOS IDP Services [12.1R1.9]
+JUNOS Services Crypto [12.1R1.9]
+JUNOS Services SSL [12.1R1.9]
+JUNOS Services IPSec [12.1R1.9]
+JUNOS Runtime Software Suite [12.1R1.9]
+JUNOS Routing Software Suite [12.1R1.9]
+
+admin@ncs# py_cli:action exec device junos command "show interface em0"
+result Physical interface: em0, Enabled, Physical link is Up
+  Interface index: 8, SNMP ifIndex: 17
+  Type: Ethernet, Link-level type: Ethernet, MTU: 1514, Speed: 1000mbps
+  Device flags   : Present Running
+  Interface flags: SNMP-Traps
+  Link type      : Full-Duplex
+  Current address: 0c:84:cc:01:00:00, Hardware address: 0c:84:cc:01:00:00
+  Last flapped   : 2022-01-05 09:07:29 UTC (03:11:58 ago)
+    Input packets : 1700
+    Output packets: 1360
+
+  Logical interface em0.0 (Index 67) (SNMP ifIndex 18)
+    Flags: SNMP-Traps Encapsulation: ENET2
+    Input packets : 1706
+    Output packets: 1369
+    Protocol inet, MTU: 1500
+      Flags: Sendbcast-pkt-to-re, Is-Primary
+      Addresses, Flags: Is-Default Is-Preferred Is-Primary
+        Destination: 192.168.124/24, Local: 192.168.124.117, Broadcast: 192.168.124.255
 
 admin@ncs#
 ```
